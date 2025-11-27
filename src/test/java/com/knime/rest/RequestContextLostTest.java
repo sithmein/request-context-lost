@@ -8,7 +8,6 @@ import org.apache.http.params.CoreConnectionPNames;
 import org.eclipse.jdt.annotation.Nullable;
 import org.junit.jupiter.api.Test;
 
-import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.common.http.TestHTTPResource;
 import io.quarkus.test.junit.QuarkusTest;
@@ -16,7 +15,6 @@ import io.restassured.RestAssured;
 import io.restassured.config.HttpClientConfig;
 
 @QuarkusTest
-@QuarkusTestResource(KeycloakWiremockTestResource.class)
 class RequestContextLostTest {
     @TestHTTPEndpoint(RequestContextLost.class)
     @TestHTTPResource

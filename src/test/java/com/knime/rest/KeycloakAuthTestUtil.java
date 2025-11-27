@@ -35,12 +35,12 @@ public final class KeycloakAuthTestUtil {
     /**
      * The private key location used signing of JWTs during tests.
      */
-    public static final String PRIVATE_KEY_LOCATION = "classpath:test/pkcs8-keycloak-privateKey.pem";
+    public static final String PRIVATE_KEY_LOCATION = "classpath:pkcs8-keycloak-privateKey.pem";
 
     /**
      * The public key location used for validation of JWTs during tests.
      */
-    public static final String JWK_LOCATION = "classpath:test/keycloak-publicKey.jwk";
+    public static final String JWK_LOCATION = "classpath:keycloak-publicKey.jwk";
 
     /**
      * The public key with which JWT created by this class can be verified.
@@ -87,7 +87,7 @@ public final class KeycloakAuthTestUtil {
 
     static {
         try {
-            var publicKey = ResourceUtils.readResource("classpath:test/pkcs8-keycloak-publicKey.pem");
+            var publicKey = ResourceUtils.readResource("classpath:pkcs8-keycloak-publicKey.pem");
             PUBLIC_KEY = KeyUtils.decodeEncryptionPublicKey(publicKey, KeyEncryptionAlgorithm.RSA_OAEP_256);
         } catch (GeneralSecurityException | IOException ex) {
             throw new IllegalStateException(ex);
